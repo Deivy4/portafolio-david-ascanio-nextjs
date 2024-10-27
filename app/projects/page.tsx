@@ -14,7 +14,7 @@ export default function Projects(){
   }
   return (
     <>
-    <div className='mx-auto container pt-4 h-28 rounded text-white flex flex-col justify-between'>
+    <div className='mx-auto container pt-4 h-28 rounded text-white flex flex-col justify-between p-6'>
       <div className='flex items-start gap-4'>
           <div className="flex items-center  rounded-lg overflow-hidden w-1/4 min-w-72 pl-2 border">
               <div className="">

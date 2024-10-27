@@ -1,81 +1,24 @@
-"use client"
-import { useState, useEffect, ReactNode } from 'react'
-import Link from 'next/link'
+"use client";
+import { useState, useEffect } from 'react';
 
-
-interface renderBtnMovilTypes {
-  onClicked : ()=>void, 
-  path : string
-}
-interface ProcessComponentsNavBarTypes {
-  isOpen : boolean,
-  setIsOpen : (isOpen : boolean) => void,
-  openItems : ({classUl} : {classUl : string}) => ReactNode,
-  renderBtnMovil : ({onClicked, path} : renderBtnMovilTypes) => ReactNode
-}
+import NavbarMobile from '@/components/NavBarMovil'
+import NavbarDesktop from '@/components/NavbarDesktop'
 
 export default function NavBar() {
-  
-  const [isOpen, setIsOpen] = useState(false)
- 
+
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  const updateMedia = () => {
+    setIsDesktop(window.innerWidth >= 756);
+  };
+
   useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 756 && setIsOpen(false),
-    );
+    updateMedia();
+    window.addEventListener('resize', updateMedia);
+    return () => window.removeEventListener('resize', updateMedia);
   }, []);
+
+  return isDesktop ? <NavbarDesktop /> : <NavbarMobile />;
+
   
-
-  const openItems = ({classUl} : {classUl : string}) =>{
-    return (
-      <ul className={classUl}>
-        <li>
-          <Link href="/" className="hover:text-gray-400">Home</Link>
-        </li>
-        <li>
-          <Link href="/projects" className="hover:text-gray-400">Projects</Link>
-        </li>
-        <li>
-          <Link href="/about" className="hover:text-gray-400">About me</Link>
-        </li>
-        <li>
-          <Link href="/contact" className="hover:text-gray-400">Contact</Link>
-        </li>
-      </ul>
-    )
-  }
-  const renderBtnMovil = ({onClicked, path} : renderBtnMovilTypes)=>{
-    return (
-        <button 
-            className="md:hidden text-white"
-            onClick={onClicked}
-          >
-            <svg className={`w-6 h-6`}  fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={`${path}`}></path>
-            </svg>
-        </button>
-    )
-  }
-  return ProcessComponentsNavBar({isOpen, setIsOpen, openItems, renderBtnMovil})
-}
-
-function ProcessComponentsNavBar({isOpen, setIsOpen, openItems, renderBtnMovil} :ProcessComponentsNavBarTypes ){
-
-  const updateOpen = () => setIsOpen(!isOpen)
-
-  return (
-    <nav className="bg-gray-800 text-white p-4 min-w-96 ">
-      <div className={`justify-between font-custom container mx-auto flex  items-center`}>
-        <h1 className="text-2xl font-bold">
-          <Link href="/">My Portfolio</Link>
-        </h1>
-        {
-          renderBtnMovil({onClicked : updateOpen ,path : (isOpen ? "M4 6h16M4 12h16M4 18h16" : "M4 10H20V12H4V10Z")})
-        }
-        
-        {openItems({classUl : isOpen ? "flex flex-col" : "hidden md:flex space-x-4"})}
-
-      </div>
-    </nav>
-  );
 }

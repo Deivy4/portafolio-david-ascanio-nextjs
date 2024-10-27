@@ -14,16 +14,16 @@ export default function Contact() {
           ¿Tienes alguna pregunta o quieres ponerte en contacto? ¡Estoy aquí para ayudarte!
         </p>
         <div className="flex flex-col items-center gap-6">
-          <a href="mailto:daviddeveloper24@outlook.com" className="text-white hover:underline flex gap-3 items-center justify-center">
-            <PiMicrosoftOutlookLogoFill className='text-2xl'/>
+          <a href="mailto:daviddeveloper24@outlook.com" className="  text-white hover:underline flex gap-3 items-center justify-center">
+            <PiMicrosoftOutlookLogoFill className='text-2xl hidden sm:block'/>
             Correo Electrónico: daviddeveloper24@outlook.com
           </a>
           <a target='_blank' href="https://api.whatsapp.com/send?phone=573027682857" className="text-white hover:underline flex gap-3 items-center justify-center">
-            <FaWhatsapp className='text-2xl'/>
+            <FaWhatsapp className='text-2xl hidden sm:block'/>
             Whatsapp: +57 302 7682857
           </a>
           <a href="https://www.linkedin.com/in/david-ascanio/" className="text-white hover:underline flex gap-3 items-center justify-center">
-            <FaLinkedin className='text-2xl'/>
+            <FaLinkedin className='text-2xl hidden sm:block'/>
             LinkedIn: linkedin.com/in/david-ascanio
           </a>
         </div>
