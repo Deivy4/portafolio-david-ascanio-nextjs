@@ -8,9 +8,8 @@ import { FaSearch } from "react-icons/fa";
 export default function Projects(){
     const [projectsR, setProjects] = useState(projects)
   const [search, setSearch] = useState('')
-  const handleClickSearch = (e :any) =>{
-    e.preventDefault()
-    let projectsFilters = projects.filter(x => x.tittle.toLowerCase().includes(search.toLowerCase()))
+  const handleClickSearch = () =>{
+    const projectsFilters = projects.filter(x => x.tittle.toLowerCase().includes(search.toLowerCase()))
     setProjects(projectsFilters)
   }
   return (
@@ -31,7 +30,7 @@ export default function Projects(){
           {/* <ComboBox/> */}
       </div>
       <div>
-        <a onClick={(e) => handleClickSearch(e)} className='py-1 px-3 bg-blue-500 rounded cursor-pointer w-16 items-end'>Search</a>
+        <a onClick={() => handleClickSearch()} className='py-1 px-3 bg-blue-500 rounded cursor-pointer w-16 items-end'>Search</a>
       </div>
     </div>
     <div className='mt-6 mx-auto'>

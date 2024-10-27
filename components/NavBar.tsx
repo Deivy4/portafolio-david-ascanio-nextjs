@@ -1,6 +1,19 @@
 "use client"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ReactNode } from 'react'
 import Link from 'next/link'
+
+
+interface renderBtnMovilTypes {
+  onClicked : ()=>void, 
+  path : string
+}
+interface ProcessComponentsNavBarTypes {
+  isOpen : boolean,
+  setIsOpen : (isOpen : boolean) => void,
+  openItems : ({classUl} : {classUl : string}) => ReactNode,
+  renderBtnMovil : ({onClicked, path} : renderBtnMovilTypes) => ReactNode
+}
+
 export default function NavBar() {
   
   const [isOpen, setIsOpen] = useState(false)
@@ -31,7 +44,7 @@ export default function NavBar() {
       </ul>
     )
   }
-  const renderBtnMovil = ({onClicked, path} : {onClicked : any, path : string})=>{
+  const renderBtnMovil = ({onClicked, path} : renderBtnMovilTypes)=>{
     return (
         <button 
             className="md:hidden text-white"
@@ -46,9 +59,7 @@ export default function NavBar() {
   return ProcessComponentsNavBar({isOpen, setIsOpen, openItems, renderBtnMovil})
 }
 
-function ProcessComponentsNavBar({isOpen, setIsOpen, openItems, renderBtnMovil}
-    :{ isOpen : boolean, setIsOpen : any, openItems : any, renderBtnMovil : any}
-){
+function ProcessComponentsNavBar({isOpen, setIsOpen, openItems, renderBtnMovil} :ProcessComponentsNavBarTypes ){
 
   const updateOpen = () => setIsOpen(!isOpen)
 

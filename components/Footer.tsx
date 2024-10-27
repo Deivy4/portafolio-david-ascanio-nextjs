@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
-export default function () {
+export default function Footer() {
     
   return (
     <div className={ `relative h-48 bg-gray-800 text-white`}>

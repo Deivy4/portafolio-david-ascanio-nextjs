@@ -7,6 +7,10 @@ import { AiTwotoneExperiment } from "react-icons/ai";
 import { useState, useEffect } from 'react';
 import Link from 'next/link'
 
+interface textsInfoTypes {
+  title : string,
+  text : string
+}
 export default function Home() {
   const textsInfo = {
     HOBBY: { title: "Hobbys", text: "..." },
@@ -16,14 +20,14 @@ export default function Home() {
   };
 
   const [selectedText, setSelectedText] = useState<string>("Home");
-  const [textInfo, setTextInfo] = useState<any>(textsInfo.HOME);
+  const [textInfo, setTextInfo] = useState<textsInfoTypes>(textsInfo.HOME);
   const [visible, setVisible] = useState<boolean>(false);
 
   const handleSelectedText = (textSelect: string) => {
     setSelectedText(textSelect);
   };
 
-  const handleTextChange = (newText : any) => {
+  const handleTextChange = (newText : textsInfoTypes) => {
     setVisible(false); // Oculta el texto primero
     setTimeout(() => {
       setTextInfo(newText); // Cambia el texto después de que el texto se oculta
