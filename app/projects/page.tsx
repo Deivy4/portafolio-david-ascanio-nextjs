@@ -14,7 +14,7 @@ export default function Projects(){
   }
   return (
     <>
-    <div className='pl-8 pt-4 mx-auto h-28 rounded text-white flex flex-col justify-between'>
+    <div className='mx-auto container pt-4 h-28 rounded text-white flex flex-col justify-between'>
       <div className='flex items-start gap-4'>
           <div className="flex items-center  rounded-lg overflow-hidden w-1/4 min-w-72 pl-2 border">
               <div className="">
@@ -34,7 +34,7 @@ export default function Projects(){
       </div>
     </div>
     <div className='mt-6 mx-auto'>
-      <div className='flex flex-wrap w-auto p-6 justify-center gap-4'>
+      <div className='flex flex-wrap w-auto p-6 justify-center gap-4 mx-auto container'>
         {projectsR.map((project, index) => (
           <CardProject
             key={index}

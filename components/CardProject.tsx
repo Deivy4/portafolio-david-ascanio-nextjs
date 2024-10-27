@@ -28,13 +28,13 @@ export default function CardProject({ title, description, imageUrl, url = "", st
   return (
     <div className={`${isVisible ? 'scale-100' : 'scale-0'} duration-300 ease-in-out transition-transform transform bg-slate-700 text-white hover:bg-white hover:text-black`}>
       <div className='flex-1 min-w-[300px] max-w-[300px] p-4 border rounded h-full'>
-        <div className='relative'>
-          <Image className="" src={imageUrl} alt={title} />
-          <div className={`text-[15px] absolute top-0 -left-6 ${stateProject == "In progress" ? 'bg-orange-500' : stateProject == "Finished" ? 'bg-green-500' : 'none'} text-white px-1 transform -rotate-[35deg]`}>
+        <div className=''>
+          <Image width={"500"} height={"500"} src={imageUrl} alt={title} />
+          <div className={`text-[15px] absolute top-4 -left-2 ${stateProject == "In progress" ? 'bg-orange-500' : stateProject == "Finished" ? 'bg-green-500' : 'none'} text-white px-1 transform -rotate-[35deg]`}>
             {stateProject}
           </div>
         </div>
-        <div className="">
+        <div className="mt-3">
           <h2 className="font-bold text-xl mb-2 ">{title}</h2>
           <p className=" text-[14px]">
             {description}
