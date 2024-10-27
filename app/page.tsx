@@ -11,10 +11,11 @@ interface textsInfoTypes {
   title : string,
   text : string
 }
+
 export default function Home() {
   const textsInfo = {
-    HOBBY: { title: "Hobbys", text: `¡Hola! Soy un desarrollador web apasionado por crear soluciones innovadoras y eficientes. Nací en Cúcuta y pasé gran parte de mi vida en Bogotá, donde di mis primeros pasos en el mundo del desarrollo de software. Actualmente resido en Mendoza, Argentina, y sigo creciendo profesionalmente en el campo del desarrollo web.` },
-    HOME: { title: "Home", text: `Cuando no estoy codificando, me gusta explorar nuevas tecnologías y tendencias en el mundo digital. Me apasiona la lectura, especialmente sobre desarrollo de software y nuevas herramientas. Además, disfruto de actividades al aire libre y de aprender sobre diferentes culturas, algo que he tenido la oportunidad de hacer viviendo en diferentes ciudades.` },
+    HOBBY: { title: "Hobbys", text: `Cuando no estoy codificando, me gusta explorar nuevas tecnologías y tendencias en el mundo digital. Me apasiona la lectura, especialmente sobre desarrollo de software y nuevas herramientas. Además, disfruto de actividades al aire libre y de aprender sobre diferentes culturas, algo que he tenido la oportunidad de hacer viviendo en diferentes ciudades.` },
+    HOME: { title: "Home", text: `¡Hola! Soy un desarrollador web apasionado por crear soluciones innovadoras y eficientes. Nací en Cúcuta y pasé gran parte de mi vida en Bogotá, donde di mis primeros pasos en el mundo del desarrollo de software. Actualmente resido en Mendoza, Argentina, y sigo creciendo profesionalmente en el campo del desarrollo web.` },
     EXPERIENCE: { title: "Experiencia", text: `Tengo más de 3 años de experiencia en desarrollo web, trabajando con tecnologías como .NET, C#, JavaScript, jQuery, React y Next.js. He sido parte de proyectos significativos en mi empresa actual, donde he contribuido en el desarrollo de aplicaciones robustas y escalables. Mi enfoque siempre ha sido mejorar la calidad del código y la experiencia del usuario, y sigo comprometido a aprender y adaptarme a las nuevas tendencias del sector.` },
     WHAT_SEARCH: { title: "¿Qué estoy buscando?", text: `Busco oportunidades que me permitan seguir desarrollándome como profesional y aportar mis habilidades en proyectos desafiantes. Estoy interesado en colaborar con equipos creativos que compartan mi pasión por la innovación y la mejora continua. Mi objetivo es crecer en áreas como la arquitectura de software y la integración de nuevas tecnologías.` }
   };
@@ -71,9 +72,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className='md:w-[60%] flex justify-center items-center h-[250px]'>
-          <div className='justify-center items-center flex flex-col gap-16 md:-mt-24 md:max-w-[80%]'>
-            <h2 className={`transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>{textInfo.title}</h2>
+        <div className='pt-28 md:w-[60%] flex justify-center items-center h-[250px]'>
+          <div className='mt-96 justify-center items-center flex flex-col gap-12 md:-mt-24 md:max-w-[80%]'>
+            <h2 className={`text-3xl transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>{textInfo.title}</h2>
             <div className='text-center'>
               <p className={`transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>{textInfo.text}</p>
             </div>
