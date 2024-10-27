@@ -13,10 +13,10 @@ interface textsInfoTypes {
 }
 export default function Home() {
   const textsInfo = {
-    HOBBY: { title: "Hobbys", text: "..." },
-    HOME: { title: "Home", text: "..." },
-    EXPERIENCE: { title: "Experiencia", text: "..." },
-    WHAT_SEARCH: { title: "¿Qué estoy buscando?", text: "..." }
+    HOBBY: { title: "Hobbys", text: `¡Hola! Soy un desarrollador web apasionado por crear soluciones innovadoras y eficientes. Nací en Cúcuta y pasé gran parte de mi vida en Bogotá, donde di mis primeros pasos en el mundo del desarrollo de software. Actualmente resido en Mendoza, Argentina, y sigo creciendo profesionalmente en el campo del desarrollo web.` },
+    HOME: { title: "Home", text: `Cuando no estoy codificando, me gusta explorar nuevas tecnologías y tendencias en el mundo digital. Me apasiona la lectura, especialmente sobre desarrollo de software y nuevas herramientas. Además, disfruto de actividades al aire libre y de aprender sobre diferentes culturas, algo que he tenido la oportunidad de hacer viviendo en diferentes ciudades.` },
+    EXPERIENCE: { title: "Experiencia", text: `Tengo más de 3 años de experiencia en desarrollo web, trabajando con tecnologías como .NET, C#, JavaScript, jQuery, React y Next.js. He sido parte de proyectos significativos en mi empresa actual, donde he contribuido en el desarrollo de aplicaciones robustas y escalables. Mi enfoque siempre ha sido mejorar la calidad del código y la experiencia del usuario, y sigo comprometido a aprender y adaptarme a las nuevas tendencias del sector.` },
+    WHAT_SEARCH: { title: "¿Qué estoy buscando?", text: `Busco oportunidades que me permitan seguir desarrollándome como profesional y aportar mis habilidades en proyectos desafiantes. Estoy interesado en colaborar con equipos creativos que compartan mi pasión por la innovación y la mejora continua. Mi objetivo es crecer en áreas como la arquitectura de software y la integración de nuevas tecnologías.` }
   };
 
   const [selectedText, setSelectedText] = useState<string>("Home");
