@@ -72,7 +72,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className=' md:pt-28 md:w-[60%] flex justify-center items-center h-[250px]'>
+        <div className=' md:pt-28 md:w-[60%] flex justify-center items-center '>
           <div className='mt-20 md:-mt-24 justify-center items-center flex flex-col gap-12 md:max-w-[80%]'>
             <h2 className={`text-3xl transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>{textInfo.title}</h2>
             <div className='text-center'>
