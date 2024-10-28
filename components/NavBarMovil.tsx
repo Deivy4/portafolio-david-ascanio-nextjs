@@ -30,19 +30,20 @@ export default function NavBarMovil(){
         </button>
       </div>
       <ul className={`mt-2 overflow-hidden transition-max-height duration-300 ${isOpen ? "max-h-44" : "max-h-0"} md:flex md:max-h-none`}>
-        <li className='cursor-pointer hover:bg-white hover:text-black p-2  border-b-[1px] rounded'>
-          <Link href="/" className="hover:text-gray-400">Home</Link>
+        <li className='border-b-[1px] rounded'>
+          <Link href="/" className="block cursor-pointer hover:bg-white p-2 hover:text-gray-400">Home</Link>
         </li>
-        <li className='cursor-pointer hover:bg-white hover:text-black p-2  border-b-[1px] rounded'>
-          <Link href="/projects" className="hover:text-gray-400">Projects</Link>
+        <li className='border-b-[1px] rounded'>
+          <Link href="/projects" className="block cursor-pointer hover:bg-white p-2 hover:text-gray-400">Projects</Link>
         </li>
-        <li className='cursor-pointer hover:bg-white hover:text-black p-2  border-b-[1px] rounded'>
-          <Link href="/about" className="hover:text-gray-400">About me</Link>
+        <li className='border-b-[1px] rounded'>
+          <Link href="/about" className="block cursor-pointer hover:bg-white p-2 hover:text-gray-400">About me</Link>
         </li>
-        <li className='cursor-pointer hover:bg-white hover:text-black p-2  border-b-[1px] rounded'>
-          <Link href="/contact" className="hover:text-gray-400">Contact</Link>
+        <li className='border-b-[1px] rounded'>
+          <Link href="/contact" className="block cursor-pointer hover:bg-white p-2 hover:text-gray-400">Contact</Link>
         </li>
       </ul>
+
     </nav>
   );
 }
