@@ -59,16 +59,16 @@ export default function Home() {
         <div className='flex justify-center md:w-[40%]'>
           <div className='grid grid-cols-2 max-w-96 rounded-lg'>
             <div onClick={() => { handleSelectedText("Home"); handleTextChange(textsInfo.HOME); }} className='cursor-pointer flex justify-center items-center p-4'>
-              <FaHome className={`${selectedText === "Home" ? 'text-cyan-500' : 'hover:text-cyan-500'} text-[86px]`} />
+              <FaHome className={`${selectedText === "Home" ? 'text-cyan-500' : 'hover:text-cyan-500'} transition-colors duration-300 text-[86px]`} />
             </div>
             <div onClick={() => { handleSelectedText("Hobby"); handleTextChange(textsInfo.HOBBY); }} className='cursor-pointer flex justify-center items-center p-4'>
-              <RxHobbyKnife className={`${selectedText === "Hobby" ? 'text-cyan-500' : 'hover:text-cyan-500'} text-[86px]`} />
+              <RxHobbyKnife className={`${selectedText === "Hobby" ? 'text-cyan-500' : 'hover:text-cyan-500'} transition-colors duration-300 text-[86px]`} />
             </div>
             <div onClick={() => { handleSelectedText("Search"); handleTextChange(textsInfo.WHAT_SEARCH); }} className='cursor-pointer flex justify-center items-center p-4'>
-              <IoSearch className={`${selectedText === "Search" ? 'text-cyan-500' : 'hover:text-cyan-500'} text-[86px]`} />
+              <IoSearch className={`${selectedText === "Search" ? 'text-cyan-500' : 'hover:text-cyan-500'} transition-colors duration-300 text-[86px]`} />
             </div>
             <div onClick={() => { handleSelectedText("Experience"); handleTextChange(textsInfo.EXPERIENCE); }} className='cursor-pointer flex justify-center items-center p-4'>
-              <AiTwotoneExperiment className={`${selectedText === "Experience" ? 'text-cyan-500' : 'hover:text-cyan-500'} text-[86px]`} />
+              <AiTwotoneExperiment className={`${selectedText === "Experience" ? 'text-cyan-500' : 'hover:text-cyan-500'} transition-colors duration-300 text-[86px]`} />
             </div>
           </div>
         </div>

@@ -7,11 +7,11 @@ export default function Footer() {
     <div className={ `relative h-48 bg-gray-800 text-white`}>
         <div className='grid grid-cols-2 mx-auto container p-6'>
           <ul className='flex flex-col gap-4 items-start text-1xl '>
-            <a target='_blank' href = {"https://api.whatsapp.com/send?phone=573027682857"}>
-              <li className='flex gap-2 justify-center items-center'> <FaWhatsapp className='mb-[2px]'/>Whatsapp</li>
+            <a className='group ' target='_blank' href = {"https://api.whatsapp.com/send?phone=573027682857"}>
+              <li className='flex gap-2 justify-center items-center'> <FaWhatsapp className='mb-[2px]'/><p className='group-hover:text-white text-gray-300 transition-colors duration-300'>Whatsapp</p></li>
             </a>
-            <a target='_blank' href = {"https://www.linkedin.com/in/david-ascanio/"}>
-              <li className='flex gap-2 justify-center items-center'> <FaLinkedin className='mb-[2px]'/> Linkedin</li>
+            <a className='group' target='_blank' href = {"https://www.linkedin.com/in/david-ascanio/"}>
+              <li className='flex gap-2 justify-center items-center'> <FaLinkedin className='mb-[2px]'/><p className='group-hover:text-white text-gray-300 transition-colors duration-300'>Linkedin</p></li>
             </a>
           </ul>
         </div>

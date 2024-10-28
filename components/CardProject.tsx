@@ -26,7 +26,7 @@ export default function CardProject({ title, description, imageUrl, url = "", st
   };
 
   return (
-    <div className={`${isVisible ? 'scale-100' : 'scale-0'} duration-300 ease-in-out transition-transform transform bg-slate-700 text-white hover:bg-white hover:text-black`}>
+    <div className={`${isVisible ? 'scale-100' : 'scale-0'} ease-in-out transform duration-300 bg-slate-700 text-white hover:bg-white hover:text-black `}>
       <div className='flex-1 min-w-[300px] max-w-[300px] p-4 border rounded h-full'>
         <div className=''>
           <Image width={"500"} height={"500"} src={imageUrl} alt={title} />
