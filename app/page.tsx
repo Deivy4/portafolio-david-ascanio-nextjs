@@ -11,6 +11,19 @@ import { Fira_Code } from "next/font/google";
  
 const inter = Fira_Code({ subsets: ['greek'] })
 
+const listTextTyping = [
+  "Hi, I am David Ascanio \n Web developer.",
+  "Web developer with a passion \n for creating engaging applications.",
+  "Proficient in HTML, CSS, JavaScript, and React.",
+  "Focused on continuous learning \n and delivering quality results."
+]
+
+const textsInfo = {
+  HOBBY: { title: "Hobbys", text: `Cuando no estoy codificando, me gusta explorar nuevas tecnologías y tendencias en el mundo digital. Me apasiona la lectura, especialmente sobre desarrollo de software y nuevas herramientas. Además, disfruto de actividades al aire libre y de aprender sobre diferentes culturas, algo que he tenido la oportunidad de hacer viviendo en diferentes ciudades.` },
+  HOME: { title: "Home", text: `¡Hola! Soy un desarrollador web apasionado por crear soluciones innovadoras y eficientes. Nací en Cúcuta y pasé gran parte de mi vida en Bogotá, donde di mis primeros pasos en el mundo del desarrollo de software. Actualmente resido en Mendoza, Argentina, y sigo creciendo profesionalmente en el campo del desarrollo web.` },
+  EXPERIENCE: { title: "Experiencia", text: `Tengo más de 3 años de experiencia en desarrollo web, trabajando con tecnologías como .NET, C#, JavaScript, jQuery, React y Next.js. He sido parte de proyectos significativos en mi empresa actual, donde he contribuido en el desarrollo de aplicaciones robustas y escalables. Mi enfoque siempre ha sido mejorar la calidad del código y la experiencia del usuario, y sigo comprometido a aprender y adaptarme a las nuevas tendencias del sector.` },
+  WHAT_SEARCH: { title: "¿Qué estoy buscando?", text: `Busco oportunidades que me permitan seguir desarrollándome como profesional y aportar mis habilidades en proyectos desafiantes. Estoy interesado en colaborar con equipos creativos que compartan mi pasión por la innovación y la mejora continua. Mi objetivo es crecer en áreas como la arquitectura de software y la integración de nuevas tecnologías.` }
+};
 
 interface textsInfoTypes {
   title : string,
@@ -18,12 +31,7 @@ interface textsInfoTypes {
 }
 
 export default function Home() {
-  const textsInfo = {
-    HOBBY: { title: "Hobbys", text: `Cuando no estoy codificando, me gusta explorar nuevas tecnologías y tendencias en el mundo digital. Me apasiona la lectura, especialmente sobre desarrollo de software y nuevas herramientas. Además, disfruto de actividades al aire libre y de aprender sobre diferentes culturas, algo que he tenido la oportunidad de hacer viviendo en diferentes ciudades.` },
-    HOME: { title: "Home", text: `¡Hola! Soy un desarrollador web apasionado por crear soluciones innovadoras y eficientes. Nací en Cúcuta y pasé gran parte de mi vida en Bogotá, donde di mis primeros pasos en el mundo del desarrollo de software. Actualmente resido en Mendoza, Argentina, y sigo creciendo profesionalmente en el campo del desarrollo web.` },
-    EXPERIENCE: { title: "Experiencia", text: `Tengo más de 3 años de experiencia en desarrollo web, trabajando con tecnologías como .NET, C#, JavaScript, jQuery, React y Next.js. He sido parte de proyectos significativos en mi empresa actual, donde he contribuido en el desarrollo de aplicaciones robustas y escalables. Mi enfoque siempre ha sido mejorar la calidad del código y la experiencia del usuario, y sigo comprometido a aprender y adaptarme a las nuevas tendencias del sector.` },
-    WHAT_SEARCH: { title: "¿Qué estoy buscando?", text: `Busco oportunidades que me permitan seguir desarrollándome como profesional y aportar mis habilidades en proyectos desafiantes. Estoy interesado en colaborar con equipos creativos que compartan mi pasión por la innovación y la mejora continua. Mi objetivo es crecer en áreas como la arquitectura de software y la integración de nuevas tecnologías.` }
-  };
+
 
   const [selectedText, setSelectedText] = useState<string>("Home");
   const [textInfo, setTextInfo] = useState<textsInfoTypes>(textsInfo.HOME);
@@ -49,12 +57,11 @@ export default function Home() {
     <div className='overflow-hidden container mx-auto'>
       <div className='items-center justify-evenly text-white md:flex mt-8 md:mt-0 mb-12'>
         <div className="md:w-1/2 font-custom flex flex-col items-center">
-          <div className={`${inter.className} text-4xl w-[80%] text-center max-h-32 min-h-32 md:max-h-24 md:min-h-24`}>
-            <TypingEffect  text={"Hi, I am David Ascanio \n Web developer"}/>
+          <div className={`${inter.className} text-4xl w-[80%] text-center pb-2`}>
+            <TypingEffect listTextTyping ={listTextTyping} />
           </div>
-          {/* <p className='text-4xl'></p> */}
           <div className='flex gap-3'>
-            <Link href={"/projects"} className='hover:bg-white hover:text-black mt-2 py-1 px-3 bg-black rounded cursor-pointer text-white'>See projects</Link>
+            <Link href={"/projects"} className=' hover:bg-white hover:text-black mt-2 py-1 px-3 bg-black rounded cursor-pointer text-white'>See projects</Link>
             <a href='/curriculum_vitae_David_Ascanio.pdf' download className='hover:bg-white hover:text-black mt-2 py-1 px-3 bg-black rounded cursor-pointer text-white'>Download CV</a>
           </div>
         </div>

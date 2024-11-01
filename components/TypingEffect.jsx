@@ -1,7 +1,8 @@
-// components/TypingEffect.js
 import { useEffect, useState } from 'react';
 
-const TypingEffect = ({ text }) => {
+const TypingEffect = ({ listTextTyping }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentText, setCurrentText] = useState(listTextTyping[0] || "");
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [index, setIndex] = useState(0);
@@ -10,37 +11,56 @@ const TypingEffect = ({ text }) => {
   const pauseDuration = 2000; // Tiempo en ms de pausa antes de volver a empezar
 
   useEffect(() => {
-    let timeout;
+    setCurrentText(listTextTyping[currentIndex]);
+    setIndex(0);
+    setDisplayText("");
+    setIsDeleting(false);
+  }, [currentIndex, listTextTyping]);
 
-    if (!isDeleting && index <= text.length) {
+  useEffect(() => {
+    let timeout;
+    // Evitar lógica si no hay texto
+    if (currentText.length === 0) return;
+
+    if (!isDeleting && index <= currentText.length) {
       timeout = setTimeout(() => {
-        setDisplayText(text.slice(0, index));
+        setDisplayText(currentText.slice(0, index));
         setIndex(index + 1);
       }, typingSpeed);
     } else if (isDeleting && index >= 0) {
       timeout = setTimeout(() => {
-        setDisplayText(text.slice(0, index));
+        setDisplayText(currentText.slice(0, index));
         setIndex(index - 1);
       }, deletingSpeed);
     }
-    if(index === 0){
-        setIsDeleting(false);
-        console.log("finish");
-    }
-    // Cambiar a estado de borrado al completar el texto
-    if (index === text.length) {
-      setTimeout(() => {
-        setIsDeleting(true);
-      }, pauseDuration);
-    } 
 
-    return () => clearTimeout(timeout);
-  }, [displayText, index, isDeleting, text]);
+    // Cambiar a estado de borrado al completar el texto
+    if (index === currentText.length) {
+      setTimeout(() => {
+         setIsDeleting(true);
+      }, pauseDuration);
+    }
+
+    if (index === -1) {
+      console.log("ttets");
+
+      setTimeout(() => {
+        let indexNext = (currentIndex+1) == listTextTyping.length ? 0 : (currentIndex+1)
+        setCurrentIndex(indexNext);     
+      }, 1000);
+      
+      // setIsDeleting(false);
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    }
+  }, [index, isDeleting, currentText, listTextTyping]);
 
   return (
-    <span className="font-mono">
+    <span translate='no' className="font-mono">
       {displayText}
-      <span className="animate-pulse">|</span>
+      <span className="animate-pulse ease-in-out">|</span>
     </span>
   );
 };
