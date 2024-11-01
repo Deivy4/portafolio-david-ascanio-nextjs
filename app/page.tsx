@@ -6,6 +6,11 @@ import { IoSearch } from "react-icons/io5";
 import { AiTwotoneExperiment } from "react-icons/ai";
 import { useState, useEffect } from 'react';
 import Link from 'next/link'
+import TypingEffect from '@/components/TypingEffect'
+import { Fira_Code } from "next/font/google";
+ 
+const inter = Fira_Code({ subsets: ['greek'] })
+
 
 interface textsInfoTypes {
   title : string,
@@ -44,8 +49,10 @@ export default function Home() {
     <div className='overflow-hidden container mx-auto'>
       <div className='items-center justify-evenly text-white md:flex mt-8 md:mt-0 mb-12'>
         <div className="md:w-1/2 font-custom flex flex-col items-center">
-          <h1 className='text-4xl'>Hi, I am David Ascanio</h1>
-          <p className='text-4xl'>Web developer</p>
+          <div className={`${inter.className} text-4xl w-[80%] text-center max-h-32 min-h-32 md:max-h-24 md:min-h-24`}>
+            <TypingEffect  text={"Hi, I am David Ascanio \n Web developer"}/>
+          </div>
+          {/* <p className='text-4xl'></p> */}
           <div className='flex gap-3'>
             <Link href={"/projects"} className='hover:bg-white hover:text-black mt-2 py-1 px-3 bg-black rounded cursor-pointer text-white'>See projects</Link>
             <a href='/curriculum_vitae_David_Ascanio.pdf' download className='hover:bg-white hover:text-black mt-2 py-1 px-3 bg-black rounded cursor-pointer text-white'>Download CV</a>
